@@ -1,0 +1,31 @@
+<div class="column is-half">
+  
+  <% if member_signed_in? %>
+    <article class="media box">
+      <figure class="media-left">
+      </figure>
+      <div class="media-content">
+        <%= render 'posts/form' %>
+      </div>
+    </article>
+  <% end %>
+
+  <% if member_signed_in? %>
+    <% @posts.each do |post| %>
+      <div class="box">
+        <article class="media">
+          <div class="media-left">
+          </div>
+          <div class="media-content">
+            <div class="content">
+              <strong><%= post.member.name %></strong><br/>
+              <small>@<%= post.member.username %></small><br/>
+              <p><%= post.post %></p>
+            </div>
+          </div>
+        </article>
+      </div>
+    <% end %>
+  <% end %>
+
+</div>

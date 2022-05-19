@@ -1,7 +1,18 @@
 <div id="<%= dom_id post %>">
   <p>
-    <strong>Post:</strong>
-    <%= post.post %>
+
+    <div class="container">
+      <div class="member-container">
+        <% if member_signed_in?%>
+        <strong>Member:</strong>
+          <%= post.member.name %>
+        <% end %>
+      </div>
+      <div class="post-container">
+        <strong>Post:</strong>
+        <%= post.post %>
+      </div>
+    </div>
   </p>
 
 </div>
